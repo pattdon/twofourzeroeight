@@ -12,8 +12,10 @@ namespace twozerofoureight
         protected int[,] board;
         protected Random rand;
         protected int[] range;
+		public Boolean send=false;
+		
 
-        public TwoZeroFourEightModel() : this(4)
+		public TwoZeroFourEightModel() : this(4)
         {
             // default board size is 4 
         }
@@ -38,7 +40,24 @@ namespace twozerofoureight
         public int[,] GetBoard()
         {
             return board;
+			
         }
+
+		public int GetScore()
+		{
+			//string sumText;
+			int sum = 0 ;
+			foreach (int i in range)
+			{
+				foreach (int j in range)
+				{
+					sum += board[i, j];
+				}
+			}
+			//sumText = sum.ToString();
+			return sum;
+		}
+
 
         private void AddRandomSlot()
         {
@@ -92,17 +111,21 @@ namespace twozerofoureight
 
         protected void HandleChanges(bool changed = true)
         {
-            // if the board has changed, add a new number
-            // and notify all views
+			// if the board has changed, add a new number
+			// and notify all views
+			bool value;
             if (changed)
             {
                 AddRandomSlot();
                 NotifyAll();
-            }
+				value = false;
+			}
+	
         }
 
         public void PerformDown()
         {
+			
             bool changed = false; // whether the board has changed
             foreach (int i in range)
             {
@@ -122,7 +145,8 @@ namespace twozerofoureight
                 }
             }
             HandleChanges(changed);
-        }
+
+		}
 
         public void PerformUp()
         {
@@ -144,8 +168,8 @@ namespace twozerofoureight
                     board[j, i] = buffer[j];
                 }
             }
-            HandleChanges(changed);
-        }
+			HandleChanges(changed);
+		}
 
         public void PerformRight()
         {
@@ -167,11 +191,14 @@ namespace twozerofoureight
                     board[i, j] = buffer[boardSize - j - 1];
                 }
             }
-            HandleChanges(changed);
-        }
+			HandleChanges(changed);
+
+		}
 
         public void PerformLeft()
         {
+		
+			
             bool changed = false; // whether the board has changed
             foreach (int i in range)
             {
@@ -191,6 +218,6 @@ namespace twozerofoureight
                 }
             }
             HandleChanges(changed);
-        }
+		}
     }
 }
