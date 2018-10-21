@@ -50,6 +50,7 @@
 			this.btnDown = new System.Windows.Forms.Button();
 			this.scoreBoxLabel = new System.Windows.Forms.Label();
 			this.GameOver = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// lbl00
@@ -263,7 +264,7 @@
 			// btnLeft
 			// 
 			this.btnLeft.Location = new System.Drawing.Point(113, 414);
-			this.btnLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.btnLeft.Margin = new System.Windows.Forms.Padding(4);
 			this.btnLeft.Name = "btnLeft";
 			this.btnLeft.Size = new System.Drawing.Size(71, 55);
 			this.btnLeft.TabIndex = 16;
@@ -274,7 +275,7 @@
 			// btnUp
 			// 
 			this.btnUp.Location = new System.Drawing.Point(187, 378);
-			this.btnUp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.btnUp.Margin = new System.Windows.Forms.Padding(4);
 			this.btnUp.Name = "btnUp";
 			this.btnUp.Size = new System.Drawing.Size(71, 55);
 			this.btnUp.TabIndex = 17;
@@ -285,7 +286,7 @@
 			// btnRight
 			// 
 			this.btnRight.Location = new System.Drawing.Point(260, 414);
-			this.btnRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.btnRight.Margin = new System.Windows.Forms.Padding(4);
 			this.btnRight.Name = "btnRight";
 			this.btnRight.Size = new System.Drawing.Size(71, 55);
 			this.btnRight.TabIndex = 18;
@@ -296,7 +297,7 @@
 			// btnDown
 			// 
 			this.btnDown.Location = new System.Drawing.Point(187, 457);
-			this.btnDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.btnDown.Margin = new System.Windows.Forms.Padding(4);
 			this.btnDown.Name = "btnDown";
 			this.btnDown.Size = new System.Drawing.Size(71, 55);
 			this.btnDown.TabIndex = 19;
@@ -326,11 +327,21 @@
 			this.GameOver.Text = "Game over";
 			this.GameOver.Visible = false;
 			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(25, 481);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(46, 17);
+			this.label1.TabIndex = 22;
+			this.label1.Text = "label1";
+			// 
 			// TwoZeroFourEightView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(459, 527);
+			this.Controls.Add(this.label1);
 			this.Controls.Add(this.GameOver);
 			this.Controls.Add(this.scoreBoxLabel);
 			this.Controls.Add(this.btnDown);
@@ -353,7 +364,7 @@
 			this.Controls.Add(this.lbl02);
 			this.Controls.Add(this.lbl01);
 			this.Controls.Add(this.lbl00);
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "TwoZeroFourEightView";
 			this.Text = "Form1";
 			this.Load += new System.EventHandler(this.TwoZeroFourEightView_Load);
@@ -386,6 +397,7 @@
         private System.Windows.Forms.Button btnDown;
 		private System.Windows.Forms.Label scoreBoxLabel;
 		private System.Windows.Forms.Label GameOver;
+		private System.Windows.Forms.Label label1;
 	}
 }
 

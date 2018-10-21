@@ -27,9 +27,10 @@ namespace twozerofoureight
 
         public void Notify(Model m)
         {
-            UpdateBoard(((TwoZeroFourEightModel)m).GetBoard());
+			GameOver.Visible = ((TwoZeroFourEightModel)m).gameOverShow();
+			UpdateBoard(((TwoZeroFourEightModel)m).GetBoard());
 			scoreBoxLabel.Text = ((TwoZeroFourEightModel)m).GetScore().ToString();
-			//GameOver.Visible = ((TwoZeroFourEightModel)m).gameOverShow();
+			label1.Text = ((TwoZeroFourEightModel)m).Textfiie().ToString();
 
 		}
 

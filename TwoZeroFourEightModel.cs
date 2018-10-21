@@ -12,7 +12,8 @@ namespace twozerofoureight
         protected int[,] board;
         protected Random rand;
         protected int[] range;
-		public Boolean send=false;
+		public Boolean send = true;
+		public int count;
 		
 
 		public TwoZeroFourEightModel() : this(4)
@@ -57,7 +58,56 @@ namespace twozerofoureight
 			//sumText = sum.ToString();
 			return sum;
 		}
+		
+		public int Textfiie()
+		{
+			return count;
+		}
 
+		public Boolean gameOverShow()
+		{
+			bool key = false;
+			int fullValue = 4;
+
+			for(int i = 0;i < fullValue; i++)
+			{
+				send = true;
+				for(int j = 0;j < fullValue; j++)
+				{
+					if (3 > j)
+					{
+						if (board[i, j + 1] - board[i, j] == 0)
+						{
+							key = true;
+							break;
+						}
+					}
+					if(3 > i)
+					{
+						if (board[i + 1, j] - board[i, j] == 0)
+						{
+							key = true;
+							break;
+						}
+					}
+					if(board[i,j] == 0)
+					{
+						key = true;
+						break;
+					}
+				}
+			}
+
+			if(key == true)
+			{
+				send = false;
+			}
+			return send;
+		}
+			
+	
+
+	
 
         private void AddRandomSlot()
         {
@@ -145,7 +195,6 @@ namespace twozerofoureight
                 }
             }
             HandleChanges(changed);
-
 		}
 
         public void PerformUp()
@@ -192,7 +241,6 @@ namespace twozerofoureight
                 }
             }
 			HandleChanges(changed);
-
 		}
 
         public void PerformLeft()
@@ -220,4 +268,5 @@ namespace twozerofoureight
             HandleChanges(changed);
 		}
     }
+
 }
